@@ -27,6 +27,27 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+      .lang-switcher {
+        margin: 0 0 20px;
+      }
+      .lang-switcher .lang-btn {
+        background: none;
+        border: none;
+        color: rgba(255,255,255,0.6);
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        cursor: pointer;
+        padding: 2px 6px;
+      }
+      .lang-switcher .lang-btn.active {
+        color: #f96d00;
+      }
+      .lang-switcher .lang-sep {
+        color: rgba(255,255,255,0.4);
+      }
+    </style>
   </head>
   <body>
 
@@ -36,12 +57,18 @@
 			<h1 id="colorlib-logo"><a href="index.html">Davi Esmeraldo<span>.</span></a></h1>
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
-					<li class="colorlib-active"><a href="index.html">Home</a></li>
-					<!-- <li><a href="index.html#about">About</a></li> --> 
-					<li class="colorlib-active"><a href="index.html#projects">Projetos</a></li>
-					<li class="colorlib-active"><a href="#questions">Contatos</a></li>
+					<li class="colorlib-active"><a href="index.html" class="i18n" data-en="Home">Home</a></li>
+					<!-- <li><a href="index.html#about">About</a></li> -->
+					<li class="colorlib-active"><a href="index.html#projects" class="i18n" data-en="Projects">Projetos</a></li>
+					<li class="colorlib-active"><a href="#questions" class="i18n" data-en="Contact">Contatos</a></li>
 				</ul>
 			</nav>
+
+			<div class="lang-switcher">
+				<button type="button" class="lang-btn active" data-lang="pt">PT</button>
+				<span class="lang-sep">|</span>
+				<button type="button" class="lang-btn" data-lang="en">EN</button>
+			</div>
 
 			<div class="colorlib-footer">
 				<ul>
@@ -63,7 +90,7 @@
 						<div class="img mb-4" style="background-image: url(images/author.JPG);"></div>
 						<div class="desc">
 							<h1 class="mb-4"> Davi Esmeraldo</h1>
-							<p class="mb-4" style="color:black;">
+							<p class="mb-4 i18n" style="color:black;" data-en="Data Scientist, Bachelor's degree in Statistics from the University of Brasília, with expertise in programming using Python, R, and SQL. Experienced in building dashboards with Power BI and Google Data Studio (Looker Studio), as well as extensive practice in developing Machine Learning algorithms, data mining, and data modeling. Also holds certifications in data science and analytics from the DataCamp learning platform.">
 Cientista de Dados, Bacharel em Estatística pela Universidade de Brasília, com expertise em programação com Python, R e SQL. Possui experiência na construção de dashboards utilizando Power BI e Google Data Studio (Looker Studio), além de ampla prática em desenvolvimento de algoritmos de Machine Learning, mineração e modelagem de dados. Também detém certificações em ciência e análise de dados pela plataforma de aprendizado DataCamp.
 							</p>
 						</div>
@@ -115,7 +142,7 @@ Cientista de Dados, Bacharel em Estatística pela Universidade de Brasília, com
 				<div class="container">
 					<div class="row justify-content-center mb-5 pb-2">
 						<div class="col-md-7 heading-section text-center ftco-animate">
-							<h2 id="projects" class="mb-4">Projetos</h2>
+							<h2 id="projects" class="mb-4 i18n" data-en="Projects">Projetos</h2>
 						</div>
 					</div>
 					<div class="row">
@@ -129,16 +156,16 @@ Cientista de Dados, Bacharel em Estatística pela Universidade de Brasília, com
       						<span class="category mb-3 d-block" style="color: #f96d00;">
         						Artificial Intelligence | NLP | Deep Learning | Machine Learning | Python | Streamlit
       						</span>
-      						<h3 class="mb-4">
+      						<h3 class="mb-4 i18n" data-en="Undergraduate Thesis">
         						Trabalho de Conclusão de Curso <!-- Processamento de Linguagem Natural para Aplicação de Técnicas de Aprendizado de Máquina e Reconhecimento de Entidades Nomeadas em Portarias Jurídicas -->
       						</h3>
-      						<p class="mb-4">
+      						<p class="mb-4 i18n" data-en="Application of Natural Language Processing to 2024 administrative orders from the Office of the Presidency of the Court of Justice of the Federal District and Territories (TJDFT). The work covers three main areas: measuring semantic similarity, identifying thematic clusters, and named entity recognition. Additionally, a web application was developed to broaden access to the results of this work.">
         						Aplicação de Processamento de Linguagem Natural em portarias de 2024 do Gabinete da Presidência do Tribunal de Justiça do Distrito Federal e dos Territórios (TJDFT). O trabalho contempla três frentes principais: a mensuração da similaridade semântica, a identificação de agrupamentos temáticos e o reconhecimento de entidades nomeadas. Adicionalmente, desenvolveu-se aplicativo web, com o objetivo de disseminar o acesso aos resultados deste trabalho.
       						</p>
       						<div class="half">
         						<p>
           						<a href="javascript:void(0)" class="btn py-2" data-toggle="modal" data-target="#linkOptionsModal">
-            						Visualizar <span class="ion-ios-arrow-forward"></span>
+            						<span class="i18n" data-en="View">Visualizar</span> <span class="ion-ios-arrow-forward"></span>
           						</a>
         						</p>
       						</div>
@@ -151,20 +178,20 @@ Cientista de Dados, Bacharel em Estatística pela Universidade de Brasília, com
   						<div class="modal-dialog modal-dialog-centered" role="document">
     						<div class="modal-content">
       						<div class="modal-header">
-        						<h5 class="modal-title" id="linkOptionsLabel">Escolha o que deseja visualizar</h5>
-        						<button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+        						<h5 class="modal-title i18n" id="linkOptionsLabel" data-en="Choose what you would like to view">Escolha o que deseja visualizar</h5>
+        						<button type="button" class="close i18n-aria" data-dismiss="modal" aria-label="Fechar" data-en-aria="Close">
           						<span aria-hidden="true">&times;</span>
         						</button>
       						</div>
       						<div class="modal-body text-center">
-        						<a href="https://portarias-2024-tjdft.streamlit.app" target="_blank" class="btn btn-outline-dark btn-block mb-2">
+        						<a href="https://portarias-2024-tjdft.streamlit.app" target="_blank" class="btn btn-outline-dark btn-block mb-2 i18n" data-en="Application">
           						Aplicativo
         						</a>
-        						<a href="https://drive.google.com/file/d/1X4VHEXVmSZWu3MXxEgIj2v_UvPrGjQzt/view?usp=sharing" target="_blank" class="btn btn-outline-dark  btn-block mb-2">
+        						<a href="https://drive.google.com/file/d/1X4VHEXVmSZWu3MXxEgIj2v_UvPrGjQzt/view?usp=sharing" target="_blank" class="btn btn-outline-dark  btn-block mb-2 i18n" data-en="Presentation">
           						Apresentação
         						</a>
-        						<a href="https://drive.google.com/file/d/1GwEWIAhuqrfWeqs-5FOlXtyPvbNPK4FQ/view?usp=sharing" target="_blank" class="btn btn-outline-dark btn-block">
-          						Monografia 
+        						<a href="https://drive.google.com/file/d/1GwEWIAhuqrfWeqs-5FOlXtyPvbNPK4FQ/view?usp=sharing" target="_blank" class="btn btn-outline-dark btn-block i18n" data-en="Thesis">
+          						Monografia
         						</a>
       						</div>
     						</div>
@@ -179,10 +206,10 @@ Cientista de Dados, Bacharel em Estatística pela Universidade de Brasília, com
 								<a href="https://66d7ig-davi-esmeraldo.shinyapps.io/DBSCAN_slide_shiny/#1" target="_blank" rel="noopener noreferrer" class="img img-2" style="background-image: url(images/image_2.jpg);"></a>
 								<div class="text text-2 pt-2 mt-3">
 									<span class="category mb-3 d-block"><a href="https://66d7ig-davi-esmeraldo.shinyapps.io/DBSCAN_slide_shiny/#1" target="_blank" rel="noopener noreferrer">Unsupervised Machine Learning | DBSCAN | K-means | R | ShinyApp </a></span>
-									<h3 class="mb-4"><a href="https://66d7ig-davi-esmeraldo.shinyapps.io/DBSCAN_slide_shiny/#1" target="_blank" rel="noopener noreferrer">Aula sobre DBSCAN</a></h3>
-									<p class="mb-4"> Aula ministrada em disciplina de Aprendizado de Máquina sobre o algoritmo de agrupamento de dados DBSCAN. Para melhor visualização do impacto dos hiperparâmetros na formação de clusters, foi criado aplicativo interativo no Shiny.</p>
+									<h3 class="mb-4"><a href="https://66d7ig-davi-esmeraldo.shinyapps.io/DBSCAN_slide_shiny/#1" target="_blank" rel="noopener noreferrer" class="i18n" data-en="DBSCAN Lecture">Aula sobre DBSCAN</a></h3>
+									<p class="mb-4 i18n" data-en="Lecture given in a Machine Learning course on the DBSCAN data clustering algorithm. To better visualize the impact of hyperparameters on cluster formation, an interactive Shiny application was created."> Aula ministrada em disciplina de Aprendizado de Máquina sobre o algoritmo de agrupamento de dados DBSCAN. Para melhor visualização do impacto dos hiperparâmetros na formação de clusters, foi criado aplicativo interativo no Shiny.</p>
 									<div class="half">
-										<p><a href="https://66d7ig-davi-esmeraldo.shinyapps.io/DBSCAN_slide_shiny/#1" target="_blank" rel="noopener noreferrer" class="btn py-2">Visualizar <span class="ion-ios-arrow-forward"></span></a></p>
+										<p><a href="https://66d7ig-davi-esmeraldo.shinyapps.io/DBSCAN_slide_shiny/#1" target="_blank" rel="noopener noreferrer" class="btn py-2"><span class="i18n" data-en="View">Visualizar</span> <span class="ion-ios-arrow-forward"></span></a></p>
 									</div>
 								</div>
 							</div>
@@ -201,18 +228,18 @@ Cientista de Dados, Bacharel em Estatística pela Universidade de Brasília, com
 										</a>
 									</span>
 									<h3 class="mb-4">
-										<a href="https://drive.google.com/file/d/1ZWOdOGkgYJdrMh_uD7ZeGa3nUu9mGLuw/view?usp=sharing" target="_blank">
+										<a href="https://drive.google.com/file/d/1ZWOdOGkgYJdrMh_uD7ZeGa3nUu9mGLuw/view?usp=sharing" target="_blank" class="i18n" data-en="Comparison of Machine Learning Algorithms for Classification">
 											Comparativo de Algoritmos de Aprendizado de Máquina para Classificação
 										</a>
 									</h3>
-									<p class="mb-4">
+									<p class="mb-4 i18n" data-en="Performance comparison of K-Nearest Neighbors (KNN), Random Forest, and Support Vector Machines (SVM) algorithms for classifying the most suitable agricultural crops, based on soil chemical properties.">
 										Comparativo do desempenho dos algoritmos K-Nearest Neighbors (KNN), Random Forest e Support Vector Machines (SVM) para
 										classificação dos cultivos agrícolas mais adequados, com base nas propriedades químicas do solo.
 									</p>
 									<div class="half">
 										<p>
 											<a href="https://drive.google.com/file/d/1ZWOdOGkgYJdrMh_uD7ZeGa3nUu9mGLuw/view?usp=sharing" target="_blank" class="btn py-2">
-												Visualizar <span class="ion-ios-arrow-forward"></span>
+												<span class="i18n" data-en="View">Visualizar</span> <span class="ion-ios-arrow-forward"></span>
 											</a>
 										</p>
 									</div>
@@ -253,7 +280,7 @@ Cientista de Dados, Bacharel em Estatística pela Universidade de Brasília, com
       <div class="container px-md-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-				<h2 id="questions" class="ftco-heading-2">Contatos</h2>
+				<h2 id="questions" class="ftco-heading-2 i18n" data-en="Contact">Contatos</h2>
             	<div class="block-23 mb-3">
 	              <ul>
 	                <li><a href="https://www.linkedin.com/in/davi-esmeraldosa" target="_blank">
@@ -275,13 +302,13 @@ Cientista de Dados, Bacharel em Estatística pela Universidade de Brasília, com
 						</a>
 					</li>
 					<li><a href="https://drive.google.com/file/d/1MP2KpT2jiG2iaVgadh_eXMtpjoxP1Oki/view?usp=sharing" target="_blank">
-						<span class="icon icon-file-text-o"></span><span class="text">Currículo</span>
+						<span class="icon icon-file-text-o"></span><span class="text i18n" data-en="Resume">Currículo</span>
 					</a></li>
 					<li><a href="http://lattes.cnpq.br/0020826771453418" target="_blank">
 						<span class="icon icon-university"></span><span class="text">Lattes</span>
 					</a></li>
 					<li><a href="https://drive.google.com/drive/folders/1JMkPtskGGXIcLcbdJeR8ovMSJQ7cZxfM?usp=sharing" target="_blank">
-						<span class="icon icon-trophy"></span><span class="text">Certificados</span>
+						<span class="icon icon-trophy"></span><span class="text i18n" data-en="Certificates">Certificados</span>
 					</a></li>
 	            </div>
             </div>
@@ -318,6 +345,42 @@ Cientista de Dados, Bacharel em Estatística pela Universidade de Brasília, com
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-    
+
+  <script>
+    (function () {
+      function applyLanguage(lang) {
+        document.querySelectorAll('.i18n').forEach(function (el) {
+          if (!el.dataset.pt) {
+            el.dataset.pt = el.textContent;
+          }
+          el.textContent = lang === 'en' ? el.dataset.en : el.dataset.pt;
+        });
+
+        document.querySelectorAll('.i18n-aria').forEach(function (el) {
+          if (!el.dataset.ptAria) {
+            el.dataset.ptAria = el.getAttribute('aria-label');
+          }
+          el.setAttribute('aria-label', lang === 'en' ? el.dataset.enAria : el.dataset.ptAria);
+        });
+
+        document.querySelectorAll('.lang-btn').forEach(function (btn) {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+
+        document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+        localStorage.setItem('site-lang', lang);
+      }
+
+      document.querySelectorAll('.lang-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          applyLanguage(btn.dataset.lang);
+        });
+      });
+
+      var savedLang = localStorage.getItem('site-lang') || 'pt';
+      applyLanguage(savedLang);
+    })();
+  </script>
+
   </body>
 </html>
